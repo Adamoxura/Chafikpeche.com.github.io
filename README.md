@@ -261,7 +261,7 @@
   <section id="boutique">
             <h2>Notre Boutique</h2>
             <div class="produit">
-                <img src="file:///C:/Users/adamo/OneDrive/Bureau/chafik peche/shimanoultegra.jpg" alt="Moulinet Shimano Ultegra 14000 XSE" />
+                <img url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') alt="Moulinet Shimano Ultegra 14000 XSE" />
                 <h3>Moulinet Shimano Ultegra 14000 XSE</h3>
                 <p>Prix : 2400 MAD</p>
                 <button onclick="ajouterAuPanier('Moulinet Shimano Ultegra 14000 XSE', 2400)">Ajouter au Panier</button>
