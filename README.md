@@ -1,4 +1,3 @@
-
 <html lang="fr">
 <head>
     <meta charset="UTF-8" />
@@ -255,12 +254,12 @@
             <a href="#contact">Contact</a>
         </nav>
 
-<section id="accueil">
+ <section id="accueil">
             <h2>Bienvenue chez Chafik Pêche</h2>
             <p>Découvrez notre boutique en ligne spécialisée dans le matériel de pêche professionnel, alliant qualité, performance et innovation pour tous les passionnés. Que vous soyez débutant ou expert, nous avons ce qu'il vous faut pour vos aventures aquatiques.</p>
         </section>
 
- <section id="boutique">
+<section id="boutique">
             <h2>Notre Boutique</h2>
             <div class="produit">
                 <img src="https://prod-static-b.chronocarpe.com/mg/product/4/5/45623e7626e2329dce7ab347ebaefa9a286c88a8_202648amb3.jpg" alt="Moulinet Shimano Ultegra 14000 XSE, modèle professionnel pour la pêche en haute mer" />
@@ -270,21 +269,21 @@
             </div>
 
  <div class="produit">
-                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Canne à pêche de 1.8 m, idéale pour les débutants" />
+                <img src="https://www.intercyprus.com/cdn/shop/files/S4565330d2c164fc48976540ad407a4d7I.webp?v=1752171412&width=1200" alt="Canne à pêche de 1.8 m, idéale pour les débutants" />
                 <h3>Canne à pêche 1.8 m</h3>
                 <p>Prix : 100 MAD</p>
                 <button onclick="ajouterAuPanier('Canne à pêche 1.8 m', 100)">Ajouter au Panier</button>
             </div>
 
- <div class="produit">
-                <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Canne à pêche de 2.2 m, pour une portée étendue" />
+<div class="produit">
+                <img src="https://m.media-amazon.com/images/I/41DpUzIfVTL.jpg" alt="Canne à pêche de 2.2 m, pour une portée étendue" />
                 <h3>Canne à pêche 2.2 m</h3>
                 <p>Prix : 120 MAD</p>
                 <button onclick="ajouterAuPanier('Canne à pêche 2.2 m', 120)">Ajouter au Panier</button>
             </div>
         </section>
 
-<section id="panier">
+ <section id="panier">
             <h2>Votre Panier</h2>
             <ul id="liste-panier"></ul>
             <p>Total : <span id="total">0</span> MAD</p>
@@ -310,7 +309,7 @@
             </p>
         </section>
 
-<footer>
+ <footer>
             <p>&copy; 2024 Chafik Pêche. Tous droits réservés.</p>
         </footer>
     </div>
@@ -338,14 +337,14 @@
             document.getElementById('total').textContent = total;
         }
 
-        function viderPanier() {
+ function viderPanier() {
             panier = [];
             total = 0;
             localStorage.removeItem('panier');
             mettreAJourPanier();
         }
 
-        function envoyerCommandeWhatsApp() {
+ function envoyerCommandeWhatsApp() {
             if (panier.length === 0) {
                 alert("Votre panier est vide. Ajoutez des produits avant de commander.");
                 return;
@@ -361,6 +360,6 @@
 
         // Initialiser le panier au chargement
         mettreAJourPanier();
-    </script>
+ </script>
 </body>
 
