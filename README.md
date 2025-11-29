@@ -1,3 +1,5 @@
+
+<html lang="fr">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -10,7 +12,7 @@
             font-family: Arial, sans-serif;
             color: white;
         }
-          /* Arrière-plan global avec image de pêche au coucher de soleil */
+        /* Arrière-plan global avec image de pêche au coucher de soleil */
         body {
             background: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') no-repeat center center fixed;
             background-size: cover;
@@ -253,36 +255,36 @@
             <a href="#contact">Contact</a>
         </nav>
 
-  <section id="accueil">
+<section id="accueil">
             <h2>Bienvenue chez Chafik Pêche</h2>
             <p>Découvrez notre boutique en ligne spécialisée dans le matériel de pêche professionnel, alliant qualité, performance et innovation pour tous les passionnés. Que vous soyez débutant ou expert, nous avons ce qu'il vous faut pour vos aventures aquatiques.</p>
         </section>
 
-  <section id="boutique">
+ <section id="boutique">
             <h2>Notre Boutique</h2>
             <div class="produit">
-                <img url('https://prod-static-b.chronocarpe.com/mg/product/4/5/45623e7626e2329dce7ab347ebaefa9a286c88a8_202648amb3.jpg') alt="Moulinet Shimano Ultegra 14000 XSE" />
+                <img src="https://prod-static-b.chronocarpe.com/mg/product/4/5/45623e7626e2329dce7ab347ebaefa9a286c88a8_202648amb3.jpg" alt="Moulinet Shimano Ultegra 14000 XSE, modèle professionnel pour la pêche en haute mer" />
                 <h3>Moulinet Shimano Ultegra 14000 XSE</h3>
                 <p>Prix : 2400 MAD</p>
                 <button onclick="ajouterAuPanier('Moulinet Shimano Ultegra 14000 XSE', 2400)">Ajouter au Panier</button>
             </div>
 
-   <div class="produit">
-                <img src="file:///C:/Users/adamo/OneDrive/Bureau/chafik peche/canepeche18.jpg" alt="Canne a peche 1.8 m" />
-                <h3>Canne a peche 1.8 m</h3>
+ <div class="produit">
+                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Canne à pêche de 1.8 m, idéale pour les débutants" />
+                <h3>Canne à pêche 1.8 m</h3>
                 <p>Prix : 100 MAD</p>
-                <button onclick="ajouterAuPanier('Canne a peche 1.8 m', 100)">Ajouter au Panier</button>
+                <button onclick="ajouterAuPanier('Canne à pêche 1.8 m', 100)">Ajouter au Panier</button>
             </div>
 
-   <div class="produit">
-                <img src="file:///C:/Users/adamo/OneDrive/Bureau/chafik peche/canepeche2.jpg" alt="Canne a peche 2.2 m" />
-                <h3>Canne a peche 2.2 m</h3>
+ <div class="produit">
+                <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Canne à pêche de 2.2 m, pour une portée étendue" />
+                <h3>Canne à pêche 2.2 m</h3>
                 <p>Prix : 120 MAD</p>
-                <button onclick="ajouterAuPanier('Canne a peche 2.2 m', 120)">Ajouter au Panier</button>
+                <button onclick="ajouterAuPanier('Canne à pêche 2.2 m', 120)">Ajouter au Panier</button>
             </div>
         </section>
 
-  <section id="panier">
+<section id="panier">
             <h2>Votre Panier</h2>
             <ul id="liste-panier"></ul>
             <p>Total : <span id="total">0</span> MAD</p>
@@ -291,11 +293,11 @@
             <button onclick="envoyerCommandeWhatsApp()">Commander via WhatsApp</button>
         </section>
 
-  <section id="contact">
+<section id="contact">
             <h2>Contactez-Nous</h2>
             <p>Email : <a href="mailto:pechechafik@gmail.com" style="color: #a0d8d8;">pechechafik@gmail.com</a></p>
             <p>Téléphone : <a href="tel:+212784268157" style="color: #a0d8d8;">07 84 26 81 57</a></p>
-            <p>Adresse : Rue Oualili F'ndeq Chejra Gallerie El Kebdani , Tanger, Maroc</p>
+            <p>Adresse : Rue Oualili F'ndeq Chejra Gallerie El Kebdani, Tanger, Maroc</p>
             <p>
                 <strong>Suivez-nous :</strong><br />
                 <a href="https://www.facebook.com/Chafik Ait Oukhzame(Chafik pêche)" target="_blank" rel="noopener" style="color: #3b5998; text-decoration:none; font-size:1.2em;">
@@ -308,19 +310,21 @@
             </p>
         </section>
 
-   <footer>
-            <p>&copy; 2025 Chafik Pêche. Tous droits réservés.</p>
+<footer>
+            <p>&copy; 2024 Chafik Pêche. Tous droits réservés.</p>
         </footer>
     </div>
 
  <script>
-        let panier = [];
-        let total = 0;
+        let panier = JSON.parse(localStorage.getItem('panier')) || [];
+        let total = panier.reduce((sum, item) => sum + item.prix, 0);
 
         function ajouterAuPanier(produit, prix) {
             panier.push({ nom: produit, prix: prix });
             total += prix;
+            localStorage.setItem('panier', JSON.stringify(panier));
             mettreAJourPanier();
+            alert(`${produit} ajouté au panier !`);
         }
 
         function mettreAJourPanier() {
@@ -337,6 +341,7 @@
         function viderPanier() {
             panier = [];
             total = 0;
+            localStorage.removeItem('panier');
             mettreAJourPanier();
         }
 
@@ -353,5 +358,9 @@
             const url = `https://wa.me/212784268157?text=${encodeURIComponent(message)}`;
             window.open(url, '_blank');
         }
+
+        // Initialiser le panier au chargement
+        mettreAJourPanier();
     </script>
 </body>
+
